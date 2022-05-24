@@ -4,16 +4,23 @@ import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
 
+interface FoodProps {
+  id: Number;
+  name: String;
+  description: String;
+  price: String;
+  available: Boolean;
+  image: String;
+}
 interface ModalAddFoodProps {
   isOpen: Boolean;
   setIsOpen: () => void;
-  handleAddFood: (food: {}) => Promise<void>;
+  handleAddFood: (food: FoodProps) => Promise<void>;
 }
 
 export const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }: ModalAddFoodProps) => {
 
-  const handleSubmit = async (data: {}) => {
-
+  const handleSubmit = async (data: FoodProps) => {
     handleAddFood(data);
     setIsOpen();
   };

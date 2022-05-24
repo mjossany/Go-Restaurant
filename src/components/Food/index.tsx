@@ -5,8 +5,17 @@ import api from '../../services/api';
 import { useState } from 'react';
 
 interface FoodProps {
+  id: Number;
+  name: String;
+  description: String;
+  price: String;
+  available: Boolean;
+  image: String;
+}
+
+interface FoodComponentProps {
   food: {
-    available: boolean;
+    available?: Boolean;
     description: string;
     id: number;
     image: string;
@@ -14,10 +23,10 @@ interface FoodProps {
     price: string;
   };
   handleDelete: (id: number) => Promise<void>;
-  handleEditFood: (food: {}) => void;
+  handleEditFood: (food: FoodProps) => void;
 }
 
-export const Food = ({ food, handleDelete, handleEditFood }: FoodProps) => {
+export const Food = ({ food, handleDelete, handleEditFood }: FoodComponentProps) => {
   const { available } = food;
   const [isAvailable, setIsAvailable] = useState(available);
 
