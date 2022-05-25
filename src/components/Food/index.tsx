@@ -5,17 +5,17 @@ import api from '../../services/api';
 import { useState } from 'react';
 
 interface FoodProps {
-  id: Number;
-  name: String;
-  description: String;
-  price: String;
-  available: Boolean;
-  image: String;
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  available: boolean;
+  image: string;
 }
 
 interface FoodComponentProps {
   food: {
-    available?: Boolean;
+    available: boolean;
     description: string;
     id: number;
     image: string;

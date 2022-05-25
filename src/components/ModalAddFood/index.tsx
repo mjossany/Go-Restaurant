@@ -3,17 +3,10 @@ import { FiCheckSquare } from 'react-icons/fi';
 import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
+import { FoodProps } from '../../pages/Dashboard';
 
-interface FoodProps {
-  id: Number;
-  name: String;
-  description: String;
-  price: String;
-  available: Boolean;
-  image: String;
-}
 interface ModalAddFoodProps {
-  isOpen: Boolean;
+  isOpen: boolean;
   setIsOpen: () => void;
   handleAddFood: (food: FoodProps) => Promise<void>;
 }
